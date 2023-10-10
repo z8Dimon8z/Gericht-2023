@@ -1,0 +1,127 @@
+// ====================================================================================================
+// Стили для главной страницы home-page
+.mainpage {
+  &__slider {}
+}
+
+.main-slider {
+  @include adaptiveValue("padding-top", 210, 140);
+  @include adaptiveValue("padding-bottom", 70, 70);
+  background-color: $bg-color;
+  display: flex;
+
+  &__container {
+
+    &_wide {
+      flex: 1 1 auto;
+      position: relative;
+    }
+  }
+
+  &__menu {}
+
+  &__scroll {
+    position: absolute;
+    bottom: 0;
+    right: rem(15);
+  }
+}
+
+.body-main-slider {
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    flex: 1 1 auto;
+  }
+
+  &__slide {
+    height: 100%;
+  }
+
+  &__controll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiveValue("padding-top", 88, 88);
+  }
+}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__content {
+    align-self: center;
+    padding-right: 40px;
+    display: grid;
+    gap: 32px;
+    max-width: rem(500);
+    justify-items: start;
+  }
+
+  &__header {}
+
+  &__text {}
+
+  &__button {}
+
+  &__image-ibg {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $mainHover;
+      width: percent(435, 619);
+      height: percent(435, 688);
+    }
+  }
+}
+
+.block-header {
+
+  &__sub-title {}
+
+  &__title {}
+}
+
+.menu-main-slider {
+  position: absolute;
+  left: rem(15);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: rem(40);
+  height: 100%;
+
+  &__link {
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: 175%;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr; // разварот текста
+
+    @media (any-hover: hover) {
+
+      // hhv hover сработает только на тех устройствах где есть мышь
+      &:hover {
+        color: $mainHover;
+      }
+    }
+  }
+}
+
+
+//====================================================================================================
