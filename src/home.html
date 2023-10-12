@@ -8,39 +8,68 @@
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="mainpage">
-      <section class="mainpage__slider main-slider" data-fullscreen>
-        <!-- атрибут data-fullscreen делает экран на всю область экрана -->
-        <div class="main-slider__container main-slider__container_wide">
-          <div class="main-slider__container body-main-slider">
-
-            <div class="body-main-slider__wrapper swiper">
-              <div class="body-main-slider__slide swiper-slide">
-                <div class="swiper-slide__content">
-                  <div class="swiper-slide__header block-header block-header_big block-header_left">
-                    <div class="block-header__sub-title">Chase the new Flavour</div>
-                    <h2 class="block-header__title">The key to Fine dining</h2>
-                  </div>
-                  <p class="swiper-slide__text text">Sit tellus lobortis sed senectus vivamus molestie. Condimentum
-                    volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus</p>
-                  <a class="swiper-slide__button button" href="#">Explore Menu</a>
-                </div>
-                <div class="swiper-slide__image-ibg">
-                  <!-- // Стили для отзывчивых картинок (IBG) base.scss -->
-                  <img src="img/mainpage/mainSlider/01.jpg" alt="Картинка еды">
-                </div>
-              </div>
-            </div>
-            <div class="body-main-slider__controll">тут булеты</div>
-          </div>
-          <nav class="main-slider__menu menu-main-slider">
-            <a class="menu-main-slider__link" href="#">#Gericht</a>
-            <a class="menu-main-slider__link" href="#">#Bar</a>
-          </nav>
-          <button type="button" class="main-slider__scroll scroll">Scroll</button>
-        </div>
-  </div>
-  </section>
-  </main>
+				<section data-fullscreen class="mainpage__slider main-slider">
+					<div class="main-slider__container main-slider__container_wide">
+						<div class="main-slider__container body-main-slider">
+							<div class="body-main-slider__swiper">
+								<div class="body-main-slider__slide slide-main-slider">
+									<div class="slide-main-slider__content">
+										<div class="slide-main-slider__header block-header block-header_big block-header_left">
+											<div class="block-header__sub-title">Chase the new Flavour</div>
+											<h2 class="block-header__title">The key to Fine dining</h2>
+										</div>
+										<div class="slide-main-slider__text">
+											Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus
+										</div>
+										<a href="" class="slide-main-slider__button button">Explore Menu</a>
+									</div>
+									<a href class="slide-main-slider__image-ibg">
+										<img src="@img/mainpage/mainslider/01.jpg" alt="Картинка еды">
+									</a>
+								</div>
+                
+								<div class="body-main-slider__slide slide-main-slider">
+									<div class="slide-main-slider__content">
+										<div class="slide-main-slider__header block-header block-header_big block-header_left">
+											<div class="block-header__sub-title">Chase the new Flavour</div>
+											<h2 class="block-header__title">The key</h2>
+										</div>
+										<div class="slide-main-slider__text">
+											Sit tellus lobortis sed senectus vivamus molestie.
+										</div>
+										<a href="" class="slide-main-slider__button button">Explore Menu</a>
+									</div>
+									<a href class="slide-main-slider__image-ibg">
+										<img src="@img/mainpage/mainslider/02.jpg" alt="Картинка еды">
+									</a>
+								</div>
+								<div class="body-main-slider__slide slide-main-slider">
+									<div class="slide-main-slider__content">
+										<div class="slide-main-slider__header block-header block-header_big block-header_left">
+											<div class="block-header__sub-title">Chase the new Flavour</div>
+											<h2 class="block-header__title">The key to Fine dining</h2>
+										</div>
+										<div class="slide-main-slider__text">
+											Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus
+										</div>
+										<a href="" class="slide-main-slider__button button">Explore Menu</a>
+									</div>
+									<a href class="slide-main-slider__image-ibg">
+										<img src="@img/mainpage/mainslider/03.jpg" alt="Картинка еды">
+									</a>
+								</div>
+                
+							</div>
+							<div class="body-main-slider__controll">Тут буллеты</div>
+						</div>
+						<nav class="main-slider__menu menu-main-slider">
+							<a href="" class="menu-main-slider__link menu-main-slider__link_current">#Gericht</a>
+							<a href="" class="menu-main-slider__link">#Bar</a>
+						</nav>
+						<button type="button" class="main-slider__scroll scroll">Scroll</button>
+					</div>
+				</section>
+			</main>
   @@include('html/_footer.htm',{})
   </div>
   @@include('html/_popup.htm',{})
