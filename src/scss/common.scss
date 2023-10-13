@@ -3,14 +3,20 @@
 // стили паралакс эфекта
 
 // Глобальный фон
-.main-bg {
-	position: fixed;
+[data-bg] {
+	overflow: hidden;
+	position: relative;
+}
+.bg-item {
+	content: "";
+	position: absolute;
 	top: -10%;
 	left: 0;
 	width: 100%;
 	height: 120%;
 	background: url("@img/main-bg.jpg") center / cover no-repeat;
 }
+
 // Шапка блока
 .block-header {
 	@extend %cuf;
@@ -20,7 +26,7 @@
 	text-transform: capitalize;
 	// .block-header__sub-title
 	&__sub-title {
-		color: $mainColor;
+		color: $mainWhite;
 		@include adaptiveValue("font-size", 23, 23);
 		line-height: 130%;
 		letter-spacing: 0.04em;
@@ -30,7 +36,7 @@
 		&::after {
 			@extend %ic;
 			content: "\e904";
-			color: $mainHover;
+			color: $mainYellow;
 			font-size: em(9, 23);
 		}
 	}
@@ -40,12 +46,12 @@
 		@include adaptiveValue("font-size", 64, 64);
 		line-height: 130%;
 		letter-spacing: 0.04em;
-		color: $mainHover;
+		color: $mainYellow;
 	}
 	// .block-header_big
 	&_big {
 		.block-header__title {
-			@include adaptiveValue("font-size", 90, 90);
+			@include adaptiveValue("font-size", 90, 40);
 		}
 	}
 	// .block-header_left
@@ -59,7 +65,7 @@
 // Кнопка скролла и вверх
 .scroll {
 	@extend %cuf;
-	color: $mainHover;
+	color: $mainYellow;
 	text-transform: uppercase;
 	font-weight: bold;
 	line-height: 175%;

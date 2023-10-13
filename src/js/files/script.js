@@ -4,7 +4,11 @@
 // import { flsModules } from "./modules.js";
 
 // Свой код который пишем
-window.addEventListener('load', function (e) { // событие полной загрузки страницы
-  document.body.insertAdjacentHTML('beforeend', `<div class="main-bg"></div>`);
-  
+window.addEventListener("load", function (e) {
+	const bg = document.querySelectorAll('[data-bg]');
+	if (bg.length) {
+		bg.forEach(bgItem => {
+			bgItem.insertAdjacentHTML('beforeend', `<div class="bg-item"></div>`);
+		});
+	}
 });

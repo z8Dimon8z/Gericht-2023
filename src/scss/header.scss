@@ -2,21 +2,36 @@
 .header {
 	color: #ffffff;
 	padding: 10px 0;
-  position: fixed; // для фона и чтобы шапка ездила
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 50;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+  // функционал // Работа с шапкой при скроле (файл scroll.js)
+	&._header-scroll {
+		position: fixed;
+		transform: translate(0px, -100%);
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+	&._header-show {
+		transition: transform 0.3s ease 0s;
+		transform: translate(0px, 0px);
+	}
 	// .header__container
 	&__container {
-    display: flex;
+		// .header__container_wide
+		&_wide {
+		}
 		align-items: center;
 		position: relative;
+		display: flex;
 		gap: 10px;
 		@include adaptiveValue("min-height", 121, 50);
-    // 121px начальная высота шапки 50 px конечная высота шапки (работа начнется с 1300px (размер огранич контейнера)
 		@media (max-width: $mobile) {
 			gap: 25px;
+		}
+		._header-scroll & {
+			@include adaptiveValue("min-height", 80, 50);
 		}
 	}
 	// .header__column
@@ -24,7 +39,6 @@
 		flex-grow: 0;
 		flex-shrink: 0;
 		@include adaptiveValue("flex-basis", 300, 180, 1330, 768, 2);
-    // 2 отключаем свойство flex-basis на разрешении 768 px
 		&_wide {
 			flex: 1 1 auto;
 		}
@@ -34,51 +48,57 @@
 	}
 	// .header__logo
 	&__logo {
-    @extend %cuf;
-    // логотип на верх при выпадании меню
-    position: relative;
-    z-index: 2;
+		@extend %cuf;
+		position: relative;
+		z-index: 2;
 		font-weight: 700;
 		line-height: 130%;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 		@include adaptiveValue("font-size", 44, 35, 1330, 768, 1);
 	}
+	// .header__menu
+	&__menu {
+	}
+	// .header__auth
+	&__auth {
+	}
 }
 .menu {
+	// .menu__icon
+	&__icon {
+	}
 	// .menu__body
 	&__body {
 		@media (max-width: $mobile) {
 			position: fixed;
-      overflow: auto; // скрол на маленьких телефонах
+			overflow: auto;
 			width: 100%;
 			height: 100%;
 			top: 0;
 			left: -100%;
-      transition: left 0.3s ease 0s;
-      background-color: black; // цвет самого меню
-      @include adaptiveValue("padding-top", 170, 100);
-      padding-bottom: rem(30);
-      padding-right: rem(15);
-      padding-left: rem(15);
-      // плашка меню
-      &::before{
-        content: '';
-        position: fixed;
-        top: 0;
-        width: 100%;
-        left: -100%;
-        transition: left 0.3s ease 0s;
-        background-color: black;
-        @include adaptiveValue("height", 141, 70);
-      }
-      // открываем меню
-      .menu-open & {
-        left: 0;
-        &::before{
-          left: 0;
-        }
-      }
+			transition: left 0.3s ease 0s;
+			background-color: #0c0c0c;
+			@include adaptiveValue("padding-top", 170, 100);
+			padding-bottom: rem(30);
+			padding-right: rem(15);
+			padding-left: rem(15);
+			&::before {
+				content: "";
+				top: -100%;
+				position: fixed;
+				width: 100%;
+				left: 0;
+				transition: top 0.3s ease 0s;
+				background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+				@include adaptiveValue("height", 171, 100);
+			}
+			.menu-open & {
+				left: 0;
+				&::before {
+					top: 0;
+				}
+			}
 		}
 	}
 	// .menu__list
@@ -89,27 +109,28 @@
 		justify-content: center;
 		align-items: center;
 		@include adaptiveValue("column-gap", 32, 15, 1330, 768, 1);
-    // 1330 768 - это промежуток в котором column-gap меняктся от 32 до 15 px
-    @media (max-width: $mobile){
-      flex-direction: column;
-      &:not(:last-child) {
-        margin-bottom: rem(50); // отступ от авторизации
-      }
-    }
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			&:not(:last-child) {
+				margin-bottom: rem(50);
+			}
+		}
 	}
-	
+	// .menu__item
+	&__item {
+	}
 	// .menu__link
 	&__link {
 		line-height: 175%;
 		letter-spacing: 0.04em;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $mainHover;
+				color: $mainYellow;
 			}
 		}
-    @media (max-width: $mobile){
-      font-size: rem(30); // размер шрифта на мобиле
-    }
+		@media (max-width: $mobile) {
+			font-size: rem(35);
+		}
 	}
 }
 .auth-header {
@@ -127,16 +148,15 @@
 		padding: 22px 0;
 		justify-content: flex-end;
 	}
-  @media (max-width: $mobileSmall){
-      align-items: center;
-    }
+	@media (max-width: $mobileSmall) {
+		align-items: center;
+	}
 	// .auth-header__item
 	&__item {
 		display: flex;
 		align-items: center;
 		position: relative;
 		@media (min-width: em(1150)) {
-      // выводитм полоску выше 1150px
 			&:not(:last-child) {
 				&::before {
 					content: "";
@@ -156,17 +176,15 @@
 		line-height: 140%;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $mainHover;
+				color: $mainYellow;
 			}
 		}
-    @media (max-width: $mobileSmall){
-      font-size: rem(20); // размер шрифта на мобиле
-    }
+		@media (max-width: $mobileSmall) {
+			font-size: rem(28);
+		}
 	}
 }
-
 //====================================================================================================
-
 //Burger
 .icon-menu {
 	display: none;

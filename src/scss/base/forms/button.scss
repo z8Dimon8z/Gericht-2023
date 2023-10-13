@@ -7,8 +7,9 @@
   @extend %cuf;
   font-weight: 700;
   line-height: 175%;
-  background-color: $mainHover;
-  color: $bg-color;
+  background-color: $mainYellow;
+  color: $mainDark;
+  text-align: center;
   transition: background-color 0.3s ease 0s;
 	@media (any-hover: hover) {
 		&:hover {
