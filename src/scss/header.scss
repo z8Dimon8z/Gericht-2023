@@ -10,12 +10,12 @@
   // функционал // Работа с шапкой при скроле (файл scroll.js)
 	&._header-scroll {
 		position: fixed;
-		transform: translate(0px, -100%);
+		top: -200%;
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 	&._header-show {
-		transition: transform 0.3s ease 0s;
-		transform: translate(0px, 0px);
+		top: 0;
+		transition: top 0.3s ease 0s;
 	}
 	// .header__container
 	&__container {

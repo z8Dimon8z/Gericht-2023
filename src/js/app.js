@@ -163,6 +163,11 @@ flsScroll.pageNavigation();
 // Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
 flsScroll.headerScroll();
 
+
+// Функционал паралакс эфекта
+
+flsScroll.bgParallax();
+
 // Функционал липкого блока
 // flsScroll.stickyBlock();
 

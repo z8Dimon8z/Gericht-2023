@@ -6,11 +6,11 @@
 		&::before {
 			content: "";
 			top: 0;
-			height: 100%;
+			height: 14908px;
 			position: absolute;
-			right: 0;
-			width: 3132px;
-			transform: translate(10%, 0px);
+			right: 50%;
+			width: 1920px;
+			transform: translate(50%, 0px);
 			background: url("@img/wave-element.svg") 0 0 / 100% no-repeat;
 		}
 	}
@@ -369,3 +369,101 @@
 		}
 	}
 }
+// ===================================================================================================
+// Секция book
+.book {
+	position: relative;
+	@include adaptiveValue("padding-top", 150, 0);
+	@include adaptiveValue("padding-bottom", 150, 0);
+
+	// .book__container
+	&__container {
+		&[data-decor] {
+			&::before {
+				position: absolute;
+				right: rem(-150);
+				top: rem(-150);
+				@media (max-width: $pc) {
+					display: none;
+				}
+			}
+		}
+	}
+	// .book__body
+	&__body {
+		@media (min-width: em(1390)) {
+			margin: 0px rem(-32);
+		}
+		padding: 0px rem(32);
+		@include adaptiveValue("padding-top", 48, 40);
+		@include adaptiveValue("padding-bottom", 48, 40);
+		background: #0c0c0c;
+		border: 1px solid rgba(220, 202, 135, 0.2);
+		box-shadow: 22px 30px 95px 1px rgba(0, 0, 0, 0.7);
+		@media (max-width: $tablet) {
+			border-right: none;
+			border-left: none;
+			margin: 0px rem(-15);
+		}
+	}
+	// .book__header
+	&__header {
+	}
+	// .book__form
+	&__form {
+		text-align: center;
+	}
+	// .book__button
+	&__button {
+	}
+}
+.block-header {
+	// .block-header__sub-title
+	&__sub-title {
+	}
+	// .block-header__title
+	&__title {
+	}
+}
+.form-book {
+	// .form-book__lines
+	&__lines {
+		@include adaptiveValue("padding-top", 64, 20);
+		@include adaptiveValue("padding-bottom", 64, 20);
+		display: grid;
+		row-gap: 20px;
+		@media (min-width: $tablet) {
+			column-gap: 32px;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	// .form-book__line
+	&__line {
+	}
+	// .form-book__input
+	&__input {
+		position: relative;
+		&::before {
+			position: absolute;
+			right: rem(16);
+			top: rem(25);
+			font-size: rem(10);
+			transition: all 0.3s ease 0s;
+		}
+		&._form-focus {
+			&::before {
+				transform: rotate(-180deg);
+			}
+		}
+		.form__error {
+			color: red;
+			font-size: rem(15);
+			margin: 10px 0px 0px 0px;
+			@media (min-width: $tablet) {
+				position: absolute;
+				bottom: -25px;
+			}
+		}
+	}
+}
+//========================================================================================================================================================
