@@ -1,6 +1,5 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile, uniqArray, FLS } from "../files/functions.js";
-import { flsModules } from "../files/modules.js";
+import { isMobile, uniqArray } from "../files/functions.js";
 
 // Наблюдатель объектов [всевидещее око]
 // data-watch - можно писать значение для применения кастомного кода
@@ -10,10 +9,10 @@ import { flsModules } from "../files/modules.js";
 // data-watch-once - наблюдать только один раз
 // _watcher-view - класс который добавляется при появлении объекта
 
-class ScrollWatcher {
+export class ScrollWatcher {
 	constructor(props) {
 		let defaultConfig = {
-			logging: true,
+			logging: false,
 		}
 		this.config = Object.assign(defaultConfig, props);
 		this.observer;
@@ -133,7 +132,7 @@ class ScrollWatcher {
 	}
 	// Функция вывода в консоль
 	scrollWatcherLogging(message) {
-		this.config.logging ? FLS(`[Наблюдатель]: ${message}`) : null;
+		this.config.logging ? console.log(`[Наблюдатель]: ${message}`) : null;
 	}
 	// Функция обработки наблюдения
 	scrollWatcherCallback(entry, observer) {
@@ -162,5 +161,3 @@ class ScrollWatcher {
 		*/
 	}
 }
-// Запускаем и добавляем в объект модулей
-flsModules.watcher = new ScrollWatcher({});

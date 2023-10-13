@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('html/_head.htm',{
-"title":"Главная"
-})
-
-<body>
-  <div class="wrapper">
-    @@include('html/_header.htm',{})
-    <main class="mainpage">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="mainpage">
 				<section data-fullscreen class="mainpage__slider main-slider">
-          <!-- data-fullscreen -первый экран на всю страницу -->
 					<div class="main-slider__container main-slider__container_wide">
 						<div class="main-slider__container body-main-slider">
 							<div class="body-main-slider__swiper">
@@ -65,15 +63,11 @@
 							<a href="" class="menu-main-slider__link menu-main-slider__link_current">#Gericht</a>
 							<a href="" class="menu-main-slider__link">#Bar</a>
 						</nav>
-						<button data-goto="#about-section" data-da=".body-main-slider,1445,last" type="button" class="main-slider__scroll scroll">Scroll</button>
-            <!-- data-goto плавный скрол до   id="about-section"-->
-            <!-- data-da переброска кнопки в конец блока body-main-slider на разрешении 1445 -->
+						<button data-goto="about-section" data-da=".body-main-slider,1445,last" type="button" class="main-slider__scroll scroll">Scroll</button>
 					</div>
 				</section>
-        <div class="mainpage__body">
+				<div class="mainpage__body">
 					<section id="about-section" data-bg class="mainpage__about about-section">
-            <!-- id="about-section" для скрола  -->
-            <!-- data-bg встака фоновой картинки -->
 						<div class="about-section__container">
 							<div class="about-section__content">
 								<h3 class="about-section__title">About Us</h3>
@@ -90,7 +84,7 @@
 							</div>
 						</div>
 					</section>
-          <section class="book">
+					<section class="book">
 						<div data-decor class="book__container">
 							<div class="book__body">
 								<div class="book__header block-header">
@@ -238,13 +232,73 @@
 							<a href="" class="special__button button">View More</a>
 						</div>
 					</section>
+					<section data-bg class="chef">
+						<div class="chef__container">
+							<div class="chef__column">
+								<div class="chef__image">
+									<img src="@img/chef/image.jpg" alt="chef">
+								</div>
+							</div>
+							<div class="chef__column">
+								<div class="chef__content">
+									<div class="chef__header block-header block-header_left">
+										<div class="block-header__sub-title">Chef’s Word</div>
+										<h2 class="block-header__title">What we believe in</h2>
+									</div>
+									<div class="chef__text _icon-quote">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit auctor sit. auctor sit iaculis in arcu. Vulputate nulla lobortis mauris eget sit. Nulla scelerisque scelerisque congue ac consequat, aliquam molestie lectus eu. Congue iaculis integer curabitur semper sit nunc.
+									</div>
+									<div class="chef__info info-chef">
+										<div class="info-chef__title">Kevin Luo</div>
+										<div class="info-chef__text">Chef & Founder</div>
+									</div>
+									<div class="chef__signature">
+										<img src="@img/chef/signature.svg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+<!--  
+					<div data-watch="video" class="video-module">
+						<video id="video-module" data-full="files/main.mp4" data-src="files/preview.mp4" muted class="video-module__item"></video>
+					</div>
+-->
+					<section class="gallery">
+						<div class="gallery__container">
+							<div class="gallery__content">
+								<div class="gallery__header block-header block-header_left">
+									<div class="block-header__sub-title">Instagram</div>
+									<h2 class="block-header__title">Photo Gallery</h2>
+								</div>
+								<div class="gallery__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mu.</div>
+								<a href="" class="gallery__button button">View More</a>
+							</div>
+							<div class="gallery__body">
+								<div class="gallery__slider">
+									<div data-gallery class="gallery__swiper">
+										<a href="@img/gallery/01.jpg" class="gallery__slide-ibg">
+											<img class="swiper-lazy" data-src="@img/gallery/01.jpg" alt="Картинка">
+										</a>
+										<a href="@img/gallery/02.jpg" class="gallery__slide-ibg">
+											<img class="swiper-lazy" data-src="@img/gallery/02.jpg" alt="Картинка">
+										</a>
+										<a href="@img/gallery/03.jpg" class="gallery__slide-ibg">
+											<img class="swiper-lazy" data-src="@img/gallery/03.jpg" alt="Картинка">
+										</a>
+										<a href="@img/gallery/04.jpg" class="gallery__slide-ibg">
+											<img class="swiper-lazy" data-src="@img/gallery/04.jpg" alt="Картинка">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 				</div>
 			</main>
-  @@include('html/_footer.htm',{})
-  </div>
-  @@include('html/_popup.htm',{})
-  @@include('html/_js.htm',{})
-
-</body>
-
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
 </html>

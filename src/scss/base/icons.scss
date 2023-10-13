@@ -8,6 +8,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 [class*="_icon-"] {
 	&:before {
 		@extend %ic;
@@ -15,27 +16,21 @@
 	}
 }
 
-
 ._icon-facebook:before {
-  content: "\e900";
+	content: "\e900";
 }
-
 ._icon-instagram:before {
-  content: "\e901";
+	content: "\e901";
 }
-
+._icon-twitter:before {
+	content: "\e902";
+}
 ._icon-quote:before {
-  content: "\e902";
+	content: "\e903";
 }
-
-._icon-select:before {
-  content: "\e903";
+._icon-select-arrow:before {
+	content: "\e904";
 }
-
 ._icon-spoon:before {
-  content: "\e904";
-}
-
-._icon-twiter:before {
-  content: "\e905";
+	content: "\e905";
 }
