@@ -9,6 +9,7 @@
     @@include('html/_header.htm',{})
     <main class="mainpage">
 				<section data-fullscreen class="mainpage__slider main-slider">
+          <!-- data-fullscreen -первый экран на всю страницу -->
 					<div class="main-slider__container main-slider__container_wide">
 						<div class="main-slider__container body-main-slider">
 							<div class="body-main-slider__swiper">
@@ -65,10 +66,14 @@
 							<a href="" class="menu-main-slider__link">#Bar</a>
 						</nav>
 						<button data-goto="#about-section" data-da=".body-main-slider,1445,last" type="button" class="main-slider__scroll scroll">Scroll</button>
+            <!-- data-goto плавный скрол до   id="about-section"-->
+            <!-- data-da переброска кнопки в конец блока body-main-slider на разрешении 1445 -->
 					</div>
 				</section>
         <div class="mainpage__body">
 					<section id="about-section" data-bg class="mainpage__about about-section">
+            <!-- id="about-section" для скрола  -->
+            <!-- data-bg встака фоновой картинки -->
 						<div class="about-section__container">
 							<div class="about-section__content">
 								<h3 class="about-section__title">About Us</h3>
