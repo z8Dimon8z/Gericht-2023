@@ -8,6 +8,7 @@
 			top: 0;
 			height: 14908px;
 			position: absolute;
+      z-index: -2;
 			right: 50%;
 			width: 1920px;
 			transform: translate(50%, 0px);
@@ -465,6 +466,7 @@
 .menu-block {
 	overflow: hidden;
 	position: relative;
+  z-index: -1;
 	&__bg {
 		position: absolute;
 		width: 100%;
